@@ -1,0 +1,14 @@
+Para o desafio foi realizada a análise das variáveis categóricas e numéricas e quais as mais fortes em relação a varíavel a ser acertada "income"
+
+- Filtrei o nível de escolaridade de acordo com os domínios levantados no documento enviado
+- Filtrei Pessoas com ganho acima de 0 reais e com idade entre 30 e 60 anos
+
+
+Separei como variáveis importantes:
+Nível de escolaridade
+Sexo
+Idade
+Pra quem trabalha
+
+Separei uma quantidade de registros pro treino e outros pro teste
+Treinei o modelo para saber a variável "income" e acertá-la e obtive acurácia de 70%

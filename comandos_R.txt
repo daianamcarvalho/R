@@ -1,0 +1,107 @@
+install.packages("readr")
+diretorio_padrao <- "~/Documentos/kaggle/titanic/"
+train <- paste0(diretorio_padrao,"train.csv")
+train <- read_csv(train)
+diretorio_padrao <- "C:\Users\freds\Documents\kaggle\titanic"
+train <- paste0(diretorio_padrao,"train.csv")
+train <- read_csv(train)
+diretorio_padrao <- "C:\\Users\\freds\\Documents\\kaggle\\titanic"
+train <- paste0(diretorio_padrao,"train.csv")
+diretorio_padrao <- "C:\\Users\\freds\\Documents\\kaggle\\titanic"
+train <- paste0(diretorio_padrao,"train.csv")
+train <- read_csv(train)
+diretorio_padrao <- "C:\\Users\\freds\\Documents\\kaggle\\titanic"
+train <- paste0(diretorio_padrao,"train.csv")
+diretorio_padrao <- "C:\\Users\\freds\\Documents\\kaggle\\titanic"
+train <- paste0(diretorio_padrao,"train.csv")
+train <- read_csv(train)
+diretorio_padrao <- "C:\\Users\\freds\\Documents\\kaggle\\titanic\\"
+train <- paste0(diretorio_padrao,"train.csv")
+train <- read_csv(train)
+train <- read_csv(train)
+install.packages("hms")
+train <- read_csv(train)
+diretorio_padrao <- "C:/Users/freds/Documents/kaggle/titanic/"
+train <- paste0(diretorio_padrao,"train.csv")
+train <- read_csv(train)
+diretorio_padrao <- "~C:/Users/freds/Documents/kaggle/titanic/"
+train <- paste0(diretorio_padrao,"train.csv")
+train <- read_csv(train)
+```{r readTrain, results="hide"}
+library(readr)
+diretorio_padrao <- "C:/Users/freds/Documents/desafiobb/"
+train <- paste0(diretorio_padrao,"census.csv")
+train <- read_csv(train)
+Especificar as variáveis que são categóricas.
+```{r}
+train$workclass <- as.factor(train$workclass)
+train$education_level <- as.factor(train$education_level)
+train$'marital-status' <- as.factor(train$'marital-status')
+train$occupation <- as.factor(train$occupation)
+train$relationship <- as.factor(train$relationship)
+train$race <- as.factor(train$race)
+train$sex <- as.factor(train$sex)
+train$'native-country' <- as.factor(train$'native-country')
+train$Target <- as.factor(train$income)
+boxplot(train$'capital-loss'~train$income, outline = FALSE)
+dados <- subset(train, (train$education_level = "Bachelors"))
+dados <- subset(train, (train$education_level == 'Bachelors'))
+print (dados)
+dados <- subset(train, (train$education_level == 'Bachelors') | (train$education_level == 'Doctorate')| (train$education_level == 'Masters')| (train$education_level == 'HS-grad')| (train$education_level == 'Some-college'))
+print(dados)
+dados <- subset(train, (train$education_level == 'Bachelors') | (train$education_level == 'Doctorate')| (train$education_level == 'Masters')| (train$education_level == 'HS-grad')| (train$education_level == 'Some-college')& train$'capital-gain' > 0)
+print(dados)
+dados <- subset(train, (train$education_level == 'Bachelors') | (train$education_level == 'Doctorate')| (train$education_level == 'Masters')| (train$education_level == 'HS-grad')| (train$education_level == 'Some-college')& train$'capital-gain' > 1)
+print(dados)
+dados <- subset(train, (train$education_level == 'Bachelors') | (train$education_level == 'Doctorate')| (train$education_level == 'Masters')| (train$education_level == 'HS-grad')| (train$education_level == 'Some-college'))
+dados2 <- subset(dados,(train$'capital-gain' > 0)
+print(dados2)
+(train$'capital-gain')
+(train$'capital-gain')
+dados2 <- subset(dados,(dados$'capital-gain' >0 ))
+print(dados2)
+plot(dados2$Target~dados2$occupation)
+plot(dados2$Target~dados2$workclass)
+plot(dados2$Target~dados2$workclass)
+summary(dados2$Target~dados2$workclass)
+summary(dados2$Target~dados2$workclass)
+plot(dados2$workclass)
+plot(dados2$Target~dados2$occupation)
+plot(train$Target~train$occupation)
+plot(dados2$Target~dados2$occupation)
+plot(dados2$workclass)
+plot(dados2$Target~dados2$workclass)
+install.packages("rpart")
+library(rpart)
+rpart(income ~sex + education_level + workclass, data = train, method="class")
+plot(dados2$Target~dados2$age)
+dados2 <- subset(dados,(dados$'capital-gain' >0 )& (dados$age >=30 & dados$age <=30 ))
+print(dados2)
+rpart(income ~sex + education_level + workclass + age, data = train, method="class")
+print(dados2)
+set.seed(1980)
+dados2$grupo <- sample.int(n=2, size=nrow(dados2), replace=TRUE, prob=(.7, .3))
+dados2$grupo <- sample.int(n=2, size=nrow(dados2), replace=TRUE, prob=c(.7, .3))
+dados2
+dados2$grupo
+nrow(dados2)
+nrow(dados)
+dados2 <- subset(dados,(dados$'capital-gain' >0 )& (dados$age >=30 & dados$age <=60 ))
+nrow(dados2)
+dados2$income
+dados2$grupo <- sample.int(n=2, size=nrow(dados2), replace=TRUE, prob=c(.7, .3))
+treino <- subset(dados2, dados2$set == 1]
+treino <- subset(dados2, dados2$set == 1)
+treino <- subset(dados2, dados2$grupo == 1)
+nrow(treino)
+teste <- subset(dados2, dados2$grupo == 2)
+nrow(teste)
+treino$grupo = NULL
+teste$grupo = NULL
+rpart(income ~ sex + education_level + workclass + age, data = treino, method="class")
+arvore = rpart(income ~ sex + education_level + workclass + age, data = treino, method="class")
+arvore
+arvore$variable.importance
+pred <- predict(arvore, teste)
+pred == teste[, 'income']
+pred
